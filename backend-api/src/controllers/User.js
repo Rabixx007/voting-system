@@ -31,7 +31,7 @@ const User = sequelize.define('User', {
   },
   password: {
     type: DataTypes.STRING,
-    allowNull: false,   // ← This was missing!
+    allowNull: false,
   },
   isAdmin: {
     type: DataTypes.BOOLEAN,
@@ -55,7 +55,7 @@ const User = sequelize.define('User', {
   },
 });
 
-// Add comparePassword method to the prototype
+// Instance method to compare password
 User.prototype.comparePassword = async function (candidatePassword) {
   return await bcrypt.compare(candidatePassword, this.password);
 };

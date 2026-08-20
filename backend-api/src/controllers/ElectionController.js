@@ -45,7 +45,7 @@ class ElectionController {
   static async createElection(req, res) {
     try {
       const { contractAddress, title, description, category, startTime, endTime, imageUrl, creatorAddress } = req.body;
-      
+
       // Check if election already exists
       const existing = await Election.findOne({ where: { contractAddress } });
       if (existing) {
@@ -62,6 +62,8 @@ class ElectionController {
         imageUrl: imageUrl || null,
         creatorAddress
       });
+      // After `await election.create(...)` or `await election.save()`
+      await User.update({ isAdmin: true }, { where: { id: req.user.id } });
 
       res.status(201).json({ success: true, data: election });
     } catch (error) {

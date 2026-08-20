@@ -6,6 +6,8 @@ import compression from 'compression';
 import dotenv from 'dotenv';
 import sequelize from './config/database.js';
 import electionRoutes from './routes/electionRoutes.js';
+import authRoutes from './routes/authRoutes.js';
+
 
 dotenv.config();
 
@@ -19,7 +21,9 @@ app.use(compression());
 app.use(express.json());
 app.use(morgan('combined'));
 
+
 // Routes
+app.use('/api/auth', authRoutes);
 app.use('/api/elections', electionRoutes);
 
 // Health check
