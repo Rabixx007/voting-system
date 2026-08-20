@@ -74,3 +74,69 @@ voting-system
 └─ setup.sh
 
 ```
+```
+voting-system
+├─ backend
+│  ├─ contracts
+│  │  ├─ Voting.sol
+│  │  └─ VotingFactory.sol
+│  ├─ contracts.json
+│  ├─ hardhat.config.js
+│  ├─ package-lock.json
+│  ├─ package.json
+│  ├─ scripts
+│  │  └─ deploy.js
+│  └─ test
+├─ backend-api
+│  ├─ Dockerfile
+│  ├─ package.json
+│  └─ src
+│     ├─ config
+│     │  └─ database.js
+│     ├─ controllers
+│     │  ├─ AuthController.js
+│     │  ├─ ElectionController.js
+│     │  └─ User.js
+│     ├─ middleware
+│     │  └─ auth.js
+│     ├─ migrations
+│     ├─ models
+│     │  ├─ Election.js
+│     │  └─ User.js
+│     ├─ routes
+│     │  ├─ authRoutes.js
+│     │  └─ electionRoutes.js
+│     ├─ server.js
+│     ├─ services
+│     └─ utils
+├─ complete-setup.sh
+├─ docker-compose.yml
+├─ frontend
+│  ├─ package-lock.json
+│  ├─ package.json
+│  ├─ public
+│  │  └─ index.html
+│  └─ src
+│     ├─ App.js
+│     ├─ components
+│     │  ├─ AdminDashboard.js
+│     │  ├─ Login.js
+│     │  ├─ Register.js
+│     │  └─ Vote.js
+│     ├─ context
+│     │  └─ AuthContext.js
+│     ├─ contracts
+│     │  ├─ contracts.json
+│     │  ├─ VotingABI.json
+│     │  └─ VotingFactoryABI.json
+│     ├─ hooks
+│     │  └─ useBlockchain.js
+│     ├─ index.js
+│     ├─ services
+│     │  └─ api.js
+│     └─ utils
+│        └─ web3.js
+├─ README.md
+└─ setup.sh
+
+```
